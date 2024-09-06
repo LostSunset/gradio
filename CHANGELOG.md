@@ -1,5 +1,20 @@
 # gradio
 
+## 5.0.0-beta.2
+
+### Features
+
+- [#9250](https://github.com/gradio-app/gradio/pull/9250) [`350b0a5`](https://github.com/gradio-app/gradio/commit/350b0a5cafb9176f914f62e7c90de51d4352cc77) - Improve Icon Button consistency.  Thanks @hannahblair!
+- [#9270](https://github.com/gradio-app/gradio/pull/9270) [`b0b8500`](https://github.com/gradio-app/gradio/commit/b0b850081d8d10c1287b5d179b8db37482e21c8d) - Fix stop recording button colors.  Thanks @freddyaboulton!
+- [#9269](https://github.com/gradio-app/gradio/pull/9269) [`e05f568`](https://github.com/gradio-app/gradio/commit/e05f568f47e9fa33ef91dbbe5cc477d32762bc36) - Fix reload mode and streaming in 5.0 dev.  Thanks @freddyaboulton!
+- [#9268](https://github.com/gradio-app/gradio/pull/9268) [`c469d40`](https://github.com/gradio-app/gradio/commit/c469d40b0d9d807abb9fa92c67069c08833ce6bc) - Raise error instead of warning if checksums for binary do not match.  Thanks @abidlabs!
+- [#9280](https://github.com/gradio-app/gradio/pull/9280) [`7122420`](https://github.com/gradio-app/gradio/commit/712242047fde3a594dfde7f48a44c7ea16239dc8) - Match style of textbox stop button to submit button.  Thanks @freddyaboulton!
+
+### Fixes
+
+- [#9242](https://github.com/gradio-app/gradio/pull/9242) [`d0e93d7`](https://github.com/gradio-app/gradio/commit/d0e93d70e87ea64f144e8eda7d5d49c27b6158e5) - Fix for create_or_modify_pyi read_text Windows Issue in component_meta.py.  Thanks @SmirkingKitsune!
+- [#9277](https://github.com/gradio-app/gradio/pull/9277) [`d9c4c86`](https://github.com/gradio-app/gradio/commit/d9c4c8606acf9ab36390e35ab10e43bb3191ced5) - Pin `fastapi<0.113.0` in `requirements.txt`.  Thanks @abidlabs!
+
 ## 5.0.0-beta.1
 
 ### Features
