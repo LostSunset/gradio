@@ -1,5 +1,12 @@
 # @gradio/slider
 
+## 0.5.0-beta.2
+
+### Dependency updates
+
+- @gradio/atoms@0.9.0-beta.2
+- @gradio/statustracker@0.8.0-beta.2
+
 ## 0.5.0-beta.1
 
 ### Dependency updates

@@ -1,5 +1,19 @@
 # @gradio/dataframe
 
+## 0.11.0-beta.2
+
+### Features
+
+- [#9313](https://github.com/gradio-app/gradio/pull/9313) [`1fef9d9`](https://github.com/gradio-app/gradio/commit/1fef9d9a26f0ebce4de18c486702661f6539b1c6) - Standardize `height` across components and add `max_height` and `min_height` parameters where appropriate.  Thanks @abidlabs!
+
+### Dependency updates
+
+- @gradio/button@0.3.0-beta.2
+- @gradio/atoms@0.9.0-beta.2
+- @gradio/upload@0.13.0-beta.2
+- @gradio/statustracker@0.8.0-beta.2
+- @gradio/markdown@0.10.0-beta.2
+
 ## 0.10.1-beta.1
 
 ### Features

@@ -1,5 +1,18 @@
 # @gradio/markdown
 
+## 0.10.0-beta.2
+
+### Features
+
+- [#9313](https://github.com/gradio-app/gradio/pull/9313) [`1fef9d9`](https://github.com/gradio-app/gradio/commit/1fef9d9a26f0ebce4de18c486702661f6539b1c6) - Standardize `height` across components and add `max_height` and `min_height` parameters where appropriate.  Thanks @abidlabs!
+- [#9260](https://github.com/gradio-app/gradio/pull/9260) [`d47dd1f`](https://github.com/gradio-app/gradio/commit/d47dd1f8417a878ef731d2eeabf60f3069289dee) - Fix overflowing markdown in Chatbot.  Thanks @hannahblair!
+
+### Dependency updates
+
+- @gradio/atoms@0.9.0-beta.2
+- @gradio/icons@0.8.0-beta.2
+- @gradio/statustracker@0.8.0-beta.2
+
 ## 0.9.4-beta.1
 
 ### Features

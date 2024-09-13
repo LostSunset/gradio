@@ -1,5 +1,26 @@
 # @gradio/chatbot
 
+## 0.14.0-beta.2
+
+### Features
+
+- [#9261](https://github.com/gradio-app/gradio/pull/9261) [`73647a0`](https://github.com/gradio-app/gradio/commit/73647a07b0439efabe3dd218ff6c366ffa3b84a0) - Move icons into `IconButtonWrapper`.  Thanks @hannahblair!
+- [#9313](https://github.com/gradio-app/gradio/pull/9313) [`1fef9d9`](https://github.com/gradio-app/gradio/commit/1fef9d9a26f0ebce4de18c486702661f6539b1c6) - Standardize `height` across components and add `max_height` and `min_height` parameters where appropriate.  Thanks @abidlabs!
+- [#9316](https://github.com/gradio-app/gradio/pull/9316) [`4338f29`](https://github.com/gradio-app/gradio/commit/4338f29bce2430d765f20070d1823ecc19d940cb) - 9227 chatinterface retry bug.  Thanks @freddyaboulton!
+
+### Dependency updates
+
+- @gradio/atoms@0.9.0-beta.2
+- @gradio/upload@0.13.0-beta.2
+- @gradio/wasm@0.14.0-beta.2
+- @gradio/icons@0.8.0-beta.2
+- @gradio/statustracker@0.8.0-beta.2
+- @gradio/image@0.16.0-beta.2
+- @gradio/video@0.11.0-beta.2
+- @gradio/gallery@0.13.0-beta.2
+- @gradio/markdown@0.10.0-beta.2
+- @gradio/plot@0.6.5-beta.2
+
 ## 0.14.0-beta.1
 
 ### Features

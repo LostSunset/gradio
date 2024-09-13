@@ -1,5 +1,37 @@
 # gradio
 
+## 5.0.0-beta.2
+
+### Features
+
+- [#9250](https://github.com/gradio-app/gradio/pull/9250) [`350b0a5`](https://github.com/gradio-app/gradio/commit/350b0a5cafb9176f914f62e7c90de51d4352cc77) - Improve Icon Button consistency.  Thanks @hannahblair!
+- [#9261](https://github.com/gradio-app/gradio/pull/9261) [`73647a0`](https://github.com/gradio-app/gradio/commit/73647a07b0439efabe3dd218ff6c366ffa3b84a0) - Move icons into `IconButtonWrapper`.  Thanks @hannahblair!
+- [#9313](https://github.com/gradio-app/gradio/pull/9313) [`1fef9d9`](https://github.com/gradio-app/gradio/commit/1fef9d9a26f0ebce4de18c486702661f6539b1c6) - Standardize `height` across components and add `max_height` and `min_height` parameters where appropriate.  Thanks @abidlabs!
+- [#9253](https://github.com/gradio-app/gradio/pull/9253) [`99648ec`](https://github.com/gradio-app/gradio/commit/99648ec7c4443e74799941e47b0015ac9ca581e1) - Adds ability to block event trigger when file is uploading.  Thanks @dawoodkhan82!
+- [#9326](https://github.com/gradio-app/gradio/pull/9326) [`7afb9a1`](https://github.com/gradio-app/gradio/commit/7afb9a14fa64310eb8b70f43a3bad373e46e36c1) - 5.0 merge take 2.  Thanks @pngwn!
+- [#9270](https://github.com/gradio-app/gradio/pull/9270) [`b0b8500`](https://github.com/gradio-app/gradio/commit/b0b850081d8d10c1287b5d179b8db37482e21c8d) - Fix stop recording button colors.  Thanks @freddyaboulton!
+- [#9312](https://github.com/gradio-app/gradio/pull/9312) [`7c0780b`](https://github.com/gradio-app/gradio/commit/7c0780b5677f8a1c05b9d2eee136e982917829b8) - Proposal: remove `gr.make_waveform` and remove `matplotlib` as a dependency.  Thanks @abidlabs!
+- [#9269](https://github.com/gradio-app/gradio/pull/9269) [`e05f568`](https://github.com/gradio-app/gradio/commit/e05f568f47e9fa33ef91dbbe5cc477d32762bc36) - Fix reload mode and streaming in 5.0 dev.  Thanks @freddyaboulton!
+- [#9321](https://github.com/gradio-app/gradio/pull/9321) [`81a356d`](https://github.com/gradio-app/gradio/commit/81a356d802f95b6a9a7aeb3759e05e47febbd0d3) - Remove two dependencies: `importlib_resources` and `urllib3` (if not in Wasm).  Thanks @abidlabs!
+- [#9341](https://github.com/gradio-app/gradio/pull/9341) [`02369b3`](https://github.com/gradio-app/gradio/commit/02369b3159df72b2f4a36ce5684574eb65065731) - Improve is_in_or_equal and fuzzer.  Thanks @freddyaboulton!
+- [#9333](https://github.com/gradio-app/gradio/pull/9333) [`5b86e2f`](https://github.com/gradio-app/gradio/commit/5b86e2f2a2bedcde79e425fd470473bc1fd6ae2e) - Enhance Lite E2E tests and fix a networking problem on Lite.  Thanks @whitphx!
+- [#9338](https://github.com/gradio-app/gradio/pull/9338) [`19f6b31`](https://github.com/gradio-app/gradio/commit/19f6b31a73c6114093cbb5a7e69131175efa8a79) - Fix typo in `tunneling.py`.  Thanks @abidlabs!
+- [#9300](https://github.com/gradio-app/gradio/pull/9300) [`6309a48`](https://github.com/gradio-app/gradio/commit/6309a48e3a89a13137ec9d61c1c722eb59b8e3dc) - Raise ChecksumMismatchError.  Thanks @abidlabs!
+- [#9335](https://github.com/gradio-app/gradio/pull/9335) [`b543465`](https://github.com/gradio-app/gradio/commit/b543465d06d7d1b399c4d0755da05e022611a97f) - Remove lite/theme.css from the Git-managed file tree.  Thanks @whitphx!
+- [#9303](https://github.com/gradio-app/gradio/pull/9303) [`34f46b0`](https://github.com/gradio-app/gradio/commit/34f46b0512fe30b4db9c9901cb23987d3cecc48d) - Dont move files to cache automatically in chatbot postprocess.  Thanks @freddyaboulton!
+- [#9260](https://github.com/gradio-app/gradio/pull/9260) [`d47dd1f`](https://github.com/gradio-app/gradio/commit/d47dd1f8417a878ef731d2eeabf60f3069289dee) - Fix overflowing markdown in Chatbot.  Thanks @hannahblair!
+- [#9314](https://github.com/gradio-app/gradio/pull/9314) [`299879d`](https://github.com/gradio-app/gradio/commit/299879d02adf3bacb012c76a467aaf5df5b31493) - Make `gr.Image` preprocessing more efficient.  Thanks @abidlabs!
+- [#9316](https://github.com/gradio-app/gradio/pull/9316) [`4338f29`](https://github.com/gradio-app/gradio/commit/4338f29bce2430d765f20070d1823ecc19d940cb) - 9227 chatinterface retry bug.  Thanks @freddyaboulton!
+- [#9306](https://github.com/gradio-app/gradio/pull/9306) [`f3f0fef`](https://github.com/gradio-app/gradio/commit/f3f0fef199c7779aac9aaef794dd4af1861ce50f) - Fixes race condition in `update_root_in_config`.  Thanks @abidlabs!
+- [#9268](https://github.com/gradio-app/gradio/pull/9268) [`c469d40`](https://github.com/gradio-app/gradio/commit/c469d40b0d9d807abb9fa92c67069c08833ce6bc) - Raise error instead of warning if checksums for binary do not match.  Thanks @abidlabs!
+- [#9282](https://github.com/gradio-app/gradio/pull/9282) [`54ea485`](https://github.com/gradio-app/gradio/commit/54ea485ba92165be96137ae35e2d3f2fc62a2873) - Further tweak to is_in_or_equal.  Thanks @freddyaboulton!
+- [#9280](https://github.com/gradio-app/gradio/pull/9280) [`7122420`](https://github.com/gradio-app/gradio/commit/712242047fde3a594dfde7f48a44c7ea16239dc8) - Match style of textbox stop button to submit button.  Thanks @freddyaboulton!
+- [#9348](https://github.com/gradio-app/gradio/pull/9348) [`61f794b`](https://github.com/gradio-app/gradio/commit/61f794bba78ef59e55beca0ba743548f33f3a3c3) - Do not attach `content_disposition_type = "attachment"` headers for files explicitly allowed by developer.  Thanks @abidlabs!
+
+### Fixes
+
+- [#9328](https://github.com/gradio-app/gradio/pull/9328) [`6a7f631`](https://github.com/gradio-app/gradio/commit/6a7f63180b4105622298dd742d6a0d25216ea629) - Set the color of placeholder in a disabled textbox to gray instead of black, and disable typing while a response is generating in `gr.ChatInterface`, allow `gr.MultimodalTextbox` to accept string values.  Thanks @abidlabs!
+
 ## 5.0.0-beta.1
 
 ### Features

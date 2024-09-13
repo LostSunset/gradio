@@ -1,5 +1,17 @@
 # website
 
+## 0.39.0-beta.2
+
+### Features
+
+- [#9326](https://github.com/gradio-app/gradio/pull/9326) [`7afb9a1`](https://github.com/gradio-app/gradio/commit/7afb9a14fa64310eb8b70f43a3bad373e46e36c1) - 5.0 merge take 2.  Thanks @pngwn!
+- [#9343](https://github.com/gradio-app/gradio/pull/9343) [`322ac54`](https://github.com/gradio-app/gradio/commit/322ac5499ec5a8541039bf329e2525e9d24ed2cc) - Add info about Powershell client.  Thanks @abidlabs!
+
+### Dependency updates
+
+- @gradio/code@0.9.1-beta.2
+- @gradio/paramviewer@0.4.22-beta.2
+
 ## 0.39.0-beta.1
 
 ### Features

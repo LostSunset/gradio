@@ -1,5 +1,16 @@
 # @self/spa
 
+## 0.1.0-beta.1
+
+### Features
+
+- [#9269](https://github.com/gradio-app/gradio/pull/9269) [`e05f568`](https://github.com/gradio-app/gradio/commit/e05f568f47e9fa33ef91dbbe5cc477d32762bc36) - Fix reload mode and streaming in 5.0 dev.  Thanks @freddyaboulton!
+- [#9335](https://github.com/gradio-app/gradio/pull/9335) [`b543465`](https://github.com/gradio-app/gradio/commit/b543465d06d7d1b399c4d0755da05e022611a97f) - Remove lite/theme.css from the Git-managed file tree.  Thanks @whitphx!
+
+### Dependency updates
+
+- @gradio/wasm@0.14.0-beta.2
+
 ## 0.0.3-beta.0
 
 ### Dependency updates
