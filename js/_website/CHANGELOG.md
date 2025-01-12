@@ -1,5 +1,29 @@
 # website
 
+## 0.46.0
+
+### Features
+
+- [#10305](https://github.com/gradio-app/gradio/pull/10305) [`be40307`](https://github.com/gradio-app/gradio/commit/be40307d1d11421e01bf91fa5e05ec4ab97b09d8) - Add support for thinking LLMs directly in `gr.ChatInterface`.  Thanks @abidlabs!
+
+### Dependency updates
+
+- @gradio/code@0.10.12
+- @gradio/paramviewer@0.6.3
+
+## 0.45.0
+
+### Features
+
+- [`6edf038`](https://github.com/gradio-app/gradio/commit/6edf0380b9c407e052e29a7fb23511c41ed3e6d9) - AI Playground Auto Fix Errors.  Thanks @aliabd!
+
+### Dependency updates
+
+- @gradio/tabs@0.4.0
+- @gradio/tabitem@0.4.0
+- @gradio/code@0.10.11
+- @gradio/paramviewer@0.6.2
+
 ## 0.44.0
 
 ### Features

@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import builtins
 import copy
+import dataclasses
 import inspect
 import os
 import warnings
@@ -32,6 +33,7 @@ from gradio.components import (
     get_component_instance,
 )
 from gradio.components.chatbot import (
+    ChatMessage,
     ExampleMessage,
     Message,
     MessageDict,
@@ -249,7 +251,7 @@ class ChatInterface(Blocks):
 
         with self:
             self.saved_conversations = BrowserState(
-                [], storage_key="_saved_conversations"
+                [], storage_key=f"_saved_conversations_{self._id}"
             )
             self.conversation_id = State(None)
             self.saved_input = State()  # Stores the most recent user message
@@ -257,14 +259,19 @@ class ChatInterface(Blocks):
 
             with Column():
                 self._render_header()
-                with Row():
-                    self._render_history_area()
-                    with Column(scale=6):
-                        self._render_chatbot_area(
-                            chatbot, textbox, submit_btn, stop_btn
-                        )
-                self._render_footer()
-                self._setup_events()
+                if self.save_history:
+                    with Row():
+                        self._render_history_area()
+                        with Column(scale=6):
+                            self._render_chatbot_area(
+                                chatbot, textbox, submit_btn, stop_btn
+                            )
+                            self._render_footer()
+                else:
+                    self._render_chatbot_area(chatbot, textbox, submit_btn, stop_btn)
+                    self._render_footer()
+
+            self._setup_events()
 
     def _render_header(self):
         if self.title:
@@ -275,20 +282,19 @@ class ChatInterface(Blocks):
             Markdown(self.description)
 
     def _render_history_area(self):
-        if self.save_history:
-            with Column(scale=1, min_width=100):
-                self.new_chat_button = Button(
-                    "New chat",
-                    variant="secondary",
-                    size="md",
-                    icon=utils.get_icon_path("plus.svg"),
-                )
-                self.chat_history_dataset = Dataset(
-                    components=[Textbox(visible=False)],
-                    show_label=False,
-                    layout="table",
-                    type="index",
-                )
+        with Column(scale=1, min_width=100):
+            self.new_chat_button = Button(
+                "New chat",
+                variant="primary",
+                size="md",
+                icon=utils.get_icon_path("plus.svg"),
+            )
+            self.chat_history_dataset = Dataset(
+                components=[Textbox(visible=False)],
+                show_label=False,
+                layout="table",
+                type="index",
+            )
 
     def _render_chatbot_area(
         self,
@@ -467,13 +473,33 @@ class ChatInterface(Blocks):
             saved_conversations.pop(index)
         return None, saved_conversations
 
+    def _load_chat_history(self, conversations):
+        return Dataset(
+            samples=[
+                [self._generate_chat_title(conv)]
+                for conv in conversations or []
+                if conv
+            ]
+        )
+
+    def _load_conversation(
+        self,
+        index: int,
+        conversations: list[list[MessageDict]],
+    ):
+        return (
+            index,
+            Chatbot(
+                value=conversations[index],  # type: ignore
+                feedback_value=[],
+            ),
+        )
+
     def _setup_events(self) -> None:
         from gradio import on
 
         submit_triggers = [self.textbox.submit, self.chatbot.retry]
         submit_fn = self._stream_fn if self.is_generator else self._submit_fn
-        if hasattr(self.fn, "zerogpu"):
-            submit_fn.__func__.zerogpu = self.fn.zerogpu  # type: ignore
 
         synchronize_chat_state_kwargs = {
             "fn": lambda x: x,
@@ -645,28 +671,29 @@ class ChatInterface(Blocks):
                 queue=False,
             )
 
-            @on(
-                [self.load, self.saved_conversations.change],
+            on(
+                triggers=[self.load, self.saved_conversations.change],
+                fn=self._load_chat_history,
                 inputs=[self.saved_conversations],
                 outputs=[self.chat_history_dataset],
                 show_api=False,
                 queue=False,
             )
-            def load_chat_history(conversations):
-                return Dataset(
-                    samples=[
-                        [self._generate_chat_title(conv)]
-                        for conv in conversations or []
-                        if conv
-                    ]
-                )
 
             self.chat_history_dataset.click(
-                lambda index, conversations: (index, conversations[index]),
+                lambda: [],
+                None,
+                [self.chatbot],
+                show_api=False,
+                queue=False,
+                show_progress="hidden",
+            ).then(
+                self._load_conversation,
                 [self.chat_history_dataset, self.saved_conversations],
                 [self.conversation_id, self.chatbot],
                 show_api=False,
                 queue=False,
+                show_progress="hidden",
             ).then(**synchronize_chat_state_kwargs)
 
         if self.flagging_mode != "never":
@@ -781,6 +808,11 @@ class ChatInterface(Blocks):
         for msg in message:
             if isinstance(msg, Message):
                 message_dicts.append(msg.model_dump())
+            elif isinstance(msg, ChatMessage):
+                msg.role = role
+                message_dicts.append(
+                    dataclasses.asdict(msg, dict_factory=utils.dict_factory)
+                )
             elif isinstance(msg, (str, Component)):
                 message_dicts.append({"role": role, "content": msg})
             elif (
