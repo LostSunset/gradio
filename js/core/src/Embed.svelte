@@ -118,7 +118,6 @@
 	}
 
 	main {
-		margin: 0 auto;
 		display: flex;
 		flex-grow: 1;
 		flex-direction: column;
@@ -155,6 +154,11 @@
 	@media (--screen-xxl) {
 		.fillable:not(.fill_width) {
 			max-width: 1536px;
+		}
+	}
+	@media (--screen-xxxl) {
+		.fillable:not(.fill_width) {
+			max-width: 1920px;
 		}
 	}
 
