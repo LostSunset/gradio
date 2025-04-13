@@ -1,5 +1,31 @@
 # @gradio/image
 
+## 0.22.1
+
+### Fixes
+
+- [#10979](https://github.com/gradio-app/gradio/pull/10979) [`975feee`](https://github.com/gradio-app/gradio/commit/975feee3925e5b65e52ae00da5c5066d8889ae6a) - improve webcam options for the ImageEditor.  Thanks @pngwn!
+
+### Dependency updates
+
+- @gradio/upload@0.16.1
+- @gradio/atoms@0.15.1
+- @gradio/statustracker@0.10.8
+- @gradio/icons@0.12.0
+
+## 0.22.0
+
+### Features
+
+- [#10635](https://github.com/gradio-app/gradio/pull/10635) [`2f68c9d`](https://github.com/gradio-app/gradio/commit/2f68c9d988dcbc53a0b8e53bdb1de49c9c8c65d8) - Refactor and redesign `ImageEditor` component.  Thanks @pngwn!
+
+### Dependency updates
+
+- @gradio/statustracker@0.10.7
+- @gradio/atoms@0.15.0
+- @gradio/icons@0.11.0
+- @gradio/upload@0.16.0
+
 ## 0.21.7
 
 ### Features

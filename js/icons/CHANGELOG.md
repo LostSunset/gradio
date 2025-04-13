@@ -1,5 +1,17 @@
 # @gradio/icons
 
+## 0.12.0
+
+### Features
+
+- [#10981](https://github.com/gradio-app/gradio/pull/10981) [`0db230f`](https://github.com/gradio-app/gradio/commit/0db230f5c2f19d9b3b455adb1b30ed9374ae1791) - allow users to change the visibility of layers in the image editor.  Thanks @pngwn!
+
+## 0.11.0
+
+### Features
+
+- [#10635](https://github.com/gradio-app/gradio/pull/10635) [`2f68c9d`](https://github.com/gradio-app/gradio/commit/2f68c9d988dcbc53a0b8e53bdb1de49c9c8c65d8) - Refactor and redesign `ImageEditor` component.  Thanks @pngwn!
+
 ## 0.10.0
 
 ### Features
