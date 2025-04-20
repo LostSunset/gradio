@@ -1,5 +1,26 @@
 # gradio
 
+## 5.25.2
+
+### Fixes
+
+- [#11021](https://github.com/gradio-app/gradio/pull/11021) [`c57a7ff`](https://github.com/gradio-app/gradio/commit/c57a7ff659ecea1bc540b359446aefd19f06085a) - Ensure that logins and logouts are redirected to the correct page in a multipage Gradio app.  Thanks @abidlabs!
+- [#11025](https://github.com/gradio-app/gradio/pull/11025) [`d24f8fd`](https://github.com/gradio-app/gradio/commit/d24f8fdc9da889e94f094f8bedbc7b8475e3acb7) - Fix `ssr_mode` parameter name in notice message.  Thanks @oxkitsune!
+- [#11020](https://github.com/gradio-app/gradio/pull/11020) [`a4a3a03`](https://github.com/gradio-app/gradio/commit/a4a3a03d513c3df8a85c2742be34b80bcf406496) - Fix streaming / stopping button when examples are clicked in `gr.ChatInterface`.  Thanks @abidlabs!
+
+## 5.25.1
+
+### Features
+
+- [#11014](https://github.com/gradio-app/gradio/pull/11014) [`7f92d5f`](https://github.com/gradio-app/gradio/commit/7f92d5ff7b39ea973bc17027ec8c158d3e376b87) - Update docs to reflect 1 week timeout.  Thanks @abidlabs!
+
+### Fixes
+
+- [#11017](https://github.com/gradio-app/gradio/pull/11017) [`734b309`](https://github.com/gradio-app/gradio/commit/734b3099d79647695e635d87726666d4b28d1bcf) - Include HF token in stream requests.  Thanks @nostalgebraist!
+- [#11018](https://github.com/gradio-app/gradio/pull/11018) [`3615a45`](https://github.com/gradio-app/gradio/commit/3615a454eb8cf5f758743494a15ce8af2fe16278) - Create share link automatically in Sagemaker notebooks.  Thanks @abidlabs!
+- [#11010](https://github.com/gradio-app/gradio/pull/11010) [`9219e62`](https://github.com/gradio-app/gradio/commit/9219e62cd21243fd9f5abecbe991e3b29039c76e) - fix: add svg tags for markdown when `allow_tags=True`.  Thanks @Col0ring!
+- [#11005](https://github.com/gradio-app/gradio/pull/11005) [`3def0ed`](https://github.com/gradio-app/gradio/commit/3def0ed9edc5a9194d69456948324ec4e2740b7d) - Ensure that the `.select()` event in `gr.DataFrame` carries the `.row_value` and `.col_value`.  Thanks @abidlabs!
+
 ## 5.25.0
 
 ### Features
