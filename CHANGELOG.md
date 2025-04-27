@@ -1,5 +1,31 @@
 # gradio
 
+## 5.27.0
+
+### Features
+
+- [#11027](https://github.com/gradio-app/gradio/pull/11027) [`eff532b`](https://github.com/gradio-app/gradio/commit/eff532b913a3c8f06f10a4f9471d3177e3744053) - Add new `ImageSlider` component.  Thanks @pngwn!
+
+### Fixes
+
+- [#11049](https://github.com/gradio-app/gradio/pull/11049) [`8d2aa3e`](https://github.com/gradio-app/gradio/commit/8d2aa3e99e165413bae1d8f5f3b4630e870308f5) - Ensure translations work as expected.  Thanks @hannahblair!
+
+## 5.26.0
+
+### Features
+
+- [#11043](https://github.com/gradio-app/gradio/pull/11043) [`62a0080`](https://github.com/gradio-app/gradio/commit/62a00806e198c4c76bc132255d4b78c7aa329157) - Pass any visible error modals from a Gradio app downstream to the app that has `gr.load`-ed it.  Thanks @abidlabs!
+
+### Fixes
+
+- [#11038](https://github.com/gradio-app/gradio/pull/11038) [`fd46e48`](https://github.com/gradio-app/gradio/commit/fd46e48f516a2907c469c7a6d3e67ae9f7068b29) - Be able to dispatch Info messages from a component.  Thanks @freddyaboulton!
+- [#11070](https://github.com/gradio-app/gradio/pull/11070) [`0355ef6`](https://github.com/gradio-app/gradio/commit/0355ef644577791749499c64840bad5947764dc8) - Ensure it is possible to draw after uploading an image to the ImageEditor.  Thanks @pngwn!
+- [#11039](https://github.com/gradio-app/gradio/pull/11039) [`aaba2c6`](https://github.com/gradio-app/gradio/commit/aaba2c6358692c9e25a193f92f02069179052837) - Fix chatinterface icons bug.  Thanks @freddyaboulton!
+- [#11057](https://github.com/gradio-app/gradio/pull/11057) [`bb1b74c`](https://github.com/gradio-app/gradio/commit/bb1b74cb62208f1cc05b91902cd541f36a1f9b01) - Image Editor Clear Event.  Thanks @freddyaboulton!
+- [#11033](https://github.com/gradio-app/gradio/pull/11033) [`0dbc14f`](https://github.com/gradio-app/gradio/commit/0dbc14fa867ef57a2f810e0b869b7d13d98f2544) - Allow setting an empty value in `display_value` of `gr.Dataframe`.  Thanks @abidlabs!
+- [#11040](https://github.com/gradio-app/gradio/pull/11040) [`3d3c701`](https://github.com/gradio-app/gradio/commit/3d3c701c46628898dee939629f57fcd3bc6c04c8) - Show stop button in `gr.ChatInterface` even for non-streaming chat functions.  Thanks @abidlabs!
+- [#11052](https://github.com/gradio-app/gradio/pull/11052) [`2750d48`](https://github.com/gradio-app/gradio/commit/2750d485450f7de9b8d01144b939893e39c8397e) - Fix duplicate id issue in spaces when creating an interface inside blocks.  Thanks @freddyaboulton!
+
 ## 5.25.2
 
 ### Fixes

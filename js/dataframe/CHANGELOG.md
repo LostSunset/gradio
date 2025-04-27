@@ -1,5 +1,20 @@
 # @gradio/dataframe
 
+## 0.17.9
+
+### Dependency updates
+
+- @gradio/statustracker@0.10.10
+- @gradio/upload@0.16.3
+- @gradio/button@0.4.16
+- @gradio/atoms@0.16.0
+
+## 0.17.8
+
+### Fixes
+
+- [#11033](https://github.com/gradio-app/gradio/pull/11033) [`0dbc14f`](https://github.com/gradio-app/gradio/commit/0dbc14fa867ef57a2f810e0b869b7d13d98f2544) - Allow setting an empty value in `display_value` of `gr.Dataframe`.  Thanks @abidlabs!
+
 ## 0.17.7
 
 ### Fixes
