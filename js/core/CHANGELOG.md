@@ -1,5 +1,40 @@
 # @gradio/core
 
+## 0.16.1
+
+### Fixes
+
+- [#11115](https://github.com/gradio-app/gradio/pull/11115) [`49e7a0d`](https://github.com/gradio-app/gradio/commit/49e7a0dd18174196b262d32e6c59d93ca40b1c73) - update STDIO instructions to specify sse-only transport.  Thanks @evalstate!
+
+### Dependency updates
+
+- @gradio/code@0.14.3
+- @gradio/button@0.4.18
+- @gradio/video@0.14.13
+- @gradio/upload@0.16.4
+- @gradio/image@0.22.5
+- @gradio/gallery@0.15.18
+- @gradio/file@0.12.17
+
+## 0.16.0
+
+### Features
+
+- [#10984](https://github.com/gradio-app/gradio/pull/10984) [`8dab577`](https://github.com/gradio-app/gradio/commit/8dab5771c7d952c76f325681dbf364119c91b0b1) - Let Gradio apps also be MCP Servers.  Thanks @abidlabs!
+
+## 0.15.1
+
+### Fixes
+
+- [#11088](https://github.com/gradio-app/gradio/pull/11088) [`a5105cc`](https://github.com/gradio-app/gradio/commit/a5105cccd6ca0682bd206608a080e24d69dad136) - fix: ensure all translation files work as expected.  Thanks @Col0ring!
+
+### Dependency updates
+
+- @gradio/gallery@0.15.17
+- @gradio/button@0.4.17
+- @gradio/video@0.14.12
+- @gradio/image@0.22.4
+
 ## 0.15.0
 
 ### Features
