@@ -283,6 +283,11 @@ def watchfn(reloader: SourceFileReloader):
     # module is available in the namespace of this thread
     module = reloader.watch_module
     no_reload_source_code = _remove_if_name_main_codeblock(str(reloader.demo_file))
+    # Reset the context to id 0 so that the loaded module is the same as the original
+    # See https://github.com/gradio-app/gradio/issues/10253
+    from gradio.context import Context
+
+    Context.id = 0
     exec(no_reload_source_code, module.__dict__)
     sys.modules[reloader.watch_module_name] = module
 
@@ -1262,11 +1267,11 @@ def diff(old, new):
             return edits
 
         if type(obj1) is not type(obj2):
-            edits.append(("replace", path, obj2))
+            edits.append(["replace", path, obj2])
             return edits
 
         if isinstance(obj1, str) and obj2.startswith(obj1):
-            edits.append(("append", path, obj2[len(obj1) :]))
+            edits.append(["append", path, obj2[len(obj1) :]])
             return edits
 
         if isinstance(obj1, list):
@@ -1274,9 +1279,16 @@ def diff(old, new):
             for i in range(common_length):
                 edits.extend(compare_objects(obj1[i], obj2[i], path + [i]))
             for i in range(common_length, len(obj1)):
-                edits.append(("delete", path + [i], None))
+                edits.append(["delete", path + [i], None])
             for i in range(common_length, len(obj2)):
-                edits.append(("add", path + [i], obj2[i]))
+                edits.append(["add", path + [i], obj2[i]])
+            # Deletes are always placed at the end
+            # So subtract 1 since deleting one element will shift all the indices
+            deletes_seen = 0
+            for edit in edits:
+                if edit[0] == "delete":
+                    edit[1] = [edit[1][-1] - deletes_seen]
+                    deletes_seen += 1
             return edits
 
         if isinstance(obj1, dict):
@@ -1284,13 +1296,13 @@ def diff(old, new):
                 if key in obj2:
                     edits.extend(compare_objects(obj1[key], obj2[key], path + [key]))
                 else:
-                    edits.append(("delete", path + [key], None))
+                    edits.append(["delete", path + [key], None])
             for key in obj2:
                 if key not in obj1:
-                    edits.append(("add", path + [key], obj2[key]))
+                    edits.append(["add", path + [key], obj2[key]])
             return edits
 
-        edits.append(("replace", path, obj2))
+        edits.append(["replace", path, obj2])
         return edits
 
     return compare_objects(old, new)
@@ -1308,7 +1320,10 @@ def get_function_params(func: Callable) -> list[tuple[str, bool, Any, Any]]:
     Excludes *args and **kwargs, as well as args that are Gradio-specific, such as gr.Request, gr.EventData, gr.OAuthProfile, and gr.OAuthToken.
     """
     params_info = []
-    signature = inspect.signature(func)
+    try:
+        signature = inspect.signature(func)
+    except ValueError:
+        signature = inspect.Signature()
     type_hints = get_type_hints(func)
     for name, parameter in signature.parameters.items():
         if parameter.kind in (
