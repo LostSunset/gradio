@@ -29,6 +29,7 @@ from gradio.data_classes import (
     MediaStreamChunk,
 )
 from gradio.events import EventListener
+from gradio.i18n import I18nData
 from gradio.layouts import Form
 from gradio.processing_utils import move_files_to_cache
 
@@ -144,8 +145,8 @@ class Component(ComponentBase, Block):
         self,
         value: Any = None,
         *,
-        label: str | None = None,
-        info: str | None = None,
+        label: str | I18nData | None = None,
+        info: str | I18nData | None = None,
         show_label: bool | None = None,
         container: bool = True,
         scale: int | None = None,
@@ -155,7 +156,8 @@ class Component(ComponentBase, Block):
         elem_id: str | None = None,
         elem_classes: list[str] | str | None = None,
         render: bool = True,
-        key: int | str | None = None,
+        key: int | str | tuple[int | str, ...] | None = None,
+        preserved_by_key: list[str] | str | None = "value",
         load_fn: Callable | None = None,
         every: Timer | float | None = None,
         inputs: Component | Sequence[Component] | set[Component] | None = None,
@@ -185,6 +187,7 @@ class Component(ComponentBase, Block):
             visible=visible,
             render=render,
             key=key,
+            preserved_by_key=preserved_by_key,
         )
         if isinstance(self, StreamingInput):
             self.check_streamable()
